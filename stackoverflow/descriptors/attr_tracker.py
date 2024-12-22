@@ -16,15 +16,15 @@ class TrackedItem:
 
         if VERBOSE_TRACKING:
             print(f"[GET] Variable {self.storage_name} has been accesed.")
-            ACCESS_LOG[instance][self.storage_name] = True
 
+        ACCESS_LOG[instance][self.storage_name] = True
         return instance.__dict__[self.storage_name]
 
     def __set__(self, instance, value):
         if VERBOSE_TRACKING:
             print(f"[SET] Variable {self.storage_name} has been accesed.")
-            ACCESS_LOG[instance][self.storage_name] = True
 
+        ACCESS_LOG[instance][self.storage_name] = True
         instance.__dict__[self.storage_name] = value
 
 
